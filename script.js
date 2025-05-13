@@ -24,7 +24,7 @@ function populateTimeSelects() {
   }
 
   // ตั้งค่าเวลาเริ่มต้น (เช่น 06:00)
-  hourSelect.value = "6";
+  hourSelect.value = "00";
   minuteSelect.value = "0"; // ถ้าอยากให้ค่าเริ่มต้นเป็นนาทีอื่น สามารถเปลี่ยนตรงนี้ได้
 }
 
