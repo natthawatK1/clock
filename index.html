@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตัวช่วยแบ่งช่วงเวลา</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>ตัวช่วยแบ่งช่วงเวลา</h1>
+
+    <div class="form-group">
+      <label for="startHour">เวลาเริ่มต้น (แบบ 24 ชั่วโมง):</label>
+      <div class="time-select-container">
+        <select id="startHour" aria-label="ชั่วโมงเริ่มต้น">
+          <!-- JavaScript จะสร้างตัวเลือกชั่วโมง -->
+        </select>
+        <span>:</span>
+        <select id="startMinute" aria-label="นาทีเริ่มต้น">
+          <!-- JavaScript จะสร้างตัวเลือกนาที -->
+        </select>
+      </div>
+      <small class="input-hint">เช่น 6 โมงเช้า เลือก 06:00, 1 ทุ่ม เลือก 19:00</small>
+    </div>
+
+    <div class="form-group">
+      <label for="slots">จำนวนช่วงที่ต้องการแบ่ง (ใน 2 ชั่วโมง):</label>
+      <input type="number" id="slots" min="1" max="120" value="4" required aria-label="จำนวนช่วงที่ต้องการแบ่ง">
+      <small class="input-hint">เช่น แบ่งเป็น 4 ช่วง จะได้ช่วงละ 30 นาที</small>
+    </div>
+
+    <button id="calculateButton" onclick="calculateTimeSlots()">คำนวณช่วงเวลา</button>
+
+    <div id="results-area" style="display:none;">
+      <h2>ช่วงเวลาที่ได้:</h2>
+      <ul id="result"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

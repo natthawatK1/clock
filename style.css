@@ -1,0 +1,183 @@
+/* --- General Styles --- */
+body {
+  font-family: 'Kanit', sans-serif;
+  background-color: #f4f6f8; /* สีพื้นหลังอ่อนโยน */
+  color: #333;
+  padding: 20px;
+  font-size: 18px; /* ขนาดฟอนต์พื้นฐานใหญ่ขึ้น */
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px; /* จำกัดความกว้างให้พอดีอ่าน */
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #2c3e50; /* สีน้ำเงินเข้ม ดูน่าเชื่อถือ */
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2em; /* 36px ถ้า base คือ 18px */
+  font-weight: 600;
+}
+
+h2 {
+  color: #34495e; /* สีน้ำเงินเทา */
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 1.6em; /* ~28px */
+  font-weight: 500;
+  border-bottom: 2px solid #eef0f2;
+  padding-bottom: 10px;
+}
+
+/* --- Form Elements --- */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.1em; /* ~20px */
+  color: #495057;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em; /* ให้ขนาดตัวอักษรใน input ใหญ่ */
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #fdfdfd;
+  color: #495057;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+select:focus,
+input[type="number"]:focus {
+  border-color: #007bff; /* สีฟ้าสดใสเมื่อ focus */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.time-select-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* ระยะห่างระหว่าง select กับตัวคั่น */
+}
+
+.time-select-container select {
+  flex-grow: 1; /* ให้ select ขยายเต็ม */
+}
+
+.time-select-container span {
+  font-size: 1.6em; /* ตัวคั่นใหญ่ชัดเจน */
+  font-weight: 600;
+  color: #555;
+  padding-bottom: 2px; /* จัดตำแหน่งแนวตั้งเล็กน้อย */
+}
+
+.input-hint {
+    font-size: 0.9em; /* ~16px */
+    color: #6c757d;
+    margin-top: 8px;
+    display: block;
+}
+
+/* --- Button --- */
+button#calculateButton {
+  background-color: #28a745; /* สีเขียว (Success) */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 25px;
+  font-size: 1.25em; /* ~22px ใหญ่และชัดเจน */
+  font-weight: 600; /* ตัวหนา */
+  font-family: 'Kanit', sans-serif; /* ใช้ font เดียวกัน */
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  margin: 35px auto 0;
+  transition: background-color 0.2s ease-out, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button#calculateButton:hover {
+  background-color: #218838; /* สีเขียวเข้มขึ้น */
+}
+
+button#calculateButton:active {
+  background-color: #1e7e34;
+  transform: translateY(1px); /* เอฟเฟกต์กดปุ่ม */
+}
+
+/* --- Result List --- */
+#results-area {
+    margin-top: 20px;
+}
+
+ul#result {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+li.result-item {
+  background-color: #e9f7ef; /* พื้นหลังสีเขียวอ่อนโยน */
+  color: #155724; /* ตัวอักษรสีเขียวเข้ม */
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 6px solid #28a745; /* แถบสีด้านซ้ายเด่นชัด */
+  font-size: 1.15em; /* ~21px ผลลัพธ์ตัวใหญ่ */
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+        font-size: 16px; /* ลดขนาด font พื้นฐานบนจอเล็ก */
+    }
+    .container {
+        padding: 20px;
+        margin-top: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    select, input[type="number"], button#calculateButton {
+        font-size: 1.1em; /* ปรับขนาดใน input ให้สัมพันธ์กัน */
+    }
+    button#calculateButton {
+        padding: 12px 20px;
+    }
+    li.result-item {
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+    .time-select-container span {
+        font-size: 1.4em;
+    }
+}
